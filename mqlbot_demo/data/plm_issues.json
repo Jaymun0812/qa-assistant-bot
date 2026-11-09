@@ -1,0 +1,63 @@
+{
+  "DEMO-000101": {
+    "detail": {
+      "issueNumber": "DEMO-000101",
+      "title": "[MDL-A100] Wi-Fi disconnects repeatedly when switching access points",
+      "status": "Resolve",
+      "priority": "A",
+      "createUser": "sam.qa",
+      "createUserName": "Sam Tester",
+      "regDate": "2026-11-02 10:15",
+      "folder": "MDL-A100_NA_DEV",
+      "description_html": "<p><b>Symptom</b><br>Wi-Fi drops every time the device roams between two access points on the same SSID.</p><table><tr><th>Item</th><th>Value</th></tr><tr><td>Reproduction rate</td><td>8/10</td></tr><tr><td>Build</td><td>DEMO.BUILD.0101</td></tr></table><p>[ 4935.358407] wlan0: deauthenticating by local choice</p>",
+      "cause": "",
+      "countermeasure": "",
+      "attachments": [
+        {"fileName": "wifi_log.zip", "fileSize": 2048000},
+        {"fileName": "screen_record.mp4", "fileSize": 15400000}
+      ]
+    },
+    "history": [
+      {"action": "Comment", "user": "Alex Kim", "date": "2026-11-03 09:00", "comment": "Reproduced on the latest build. Collecting air logs."},
+      {"action": "Resolve", "user": "Dev Owner", "date": "2026-11-05 18:30", "cause": "Roaming threshold was too aggressive after the driver update.", "countermeasure": "Adjusted roaming RSSI threshold and added hysteresis. Fixed in DEMO.BUILD.0105."},
+      {"action": "Comment", "user": "Sam Tester", "date": "2026-11-06 11:20", "comment": "Verification scheduled for the next build."}
+    ]
+  },
+  "DEMO-000102": {
+    "detail": {
+      "issueNumber": "DEMO-000102",
+      "title": "[MDL-B200] Camera app freezes when recording 4K HDR video",
+      "status": "Open",
+      "priority": "B",
+      "createUser": "pat.qa",
+      "createUserName": "Pat Reviewer",
+      "regDate": "2026-11-08 14:40",
+      "folder": "MDL-B200_EU_NDA",
+      "description_html": "<p>The camera preview freezes about 30 seconds into 4K HDR recording. The app recovers after being force-closed.</p><ul><li>Occurs only with HDR enabled</li><li>Not observed at 1080p</li></ul>",
+      "cause": "",
+      "countermeasure": "",
+      "attachments": []
+    },
+    "history": [
+      {"action": "Comment", "user": "Casey Jung", "date": "2026-11-09 10:05", "comment": "Looks related to encoder buffer allocation. Assigned to the camera team."}
+    ]
+  },
+  "DEMO-000103": {
+    "detail": {
+      "issueNumber": "DEMO-000103",
+      "title": "[MDL-C300] Battery drains 15% overnight in standby",
+      "status": "Open",
+      "priority": "A",
+      "createUser": "sam.qa",
+      "createUserName": "Sam Tester",
+      "regDate": "2026-11-09 08:10",
+      "folder": "MDL-C300_NA_MR",
+      "description_html": "Standby current is higher than the previous release. Wakelock analysis is in progress.",
+      "cause": "",
+      "countermeasure": "",
+      "attachments": [],
+      "history_unavailable": true
+    },
+    "history": []
+  }
+}

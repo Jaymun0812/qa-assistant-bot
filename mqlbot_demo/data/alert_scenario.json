@@ -1,0 +1,35 @@
+{
+  "_comment": "Times are relative to the moment the demo runs, so the scenario always produces alerts.",
+  "config": {
+    "additional_recipients": {"QA Manager": "qa.manager"},
+    "extra_recipients_per_project": {"MDL-A100": ["qa.manager"]},
+    "always_alarm_models": ["MDL-E500"],
+    "excluded_folders_for_resolved": ["Sandbox Folder"]
+  },
+  "rft_mapping": {"sam.qa": ["rft.one", "rft.two"]},
+  "models": [
+    {"name": "MDL-A100", "stage_type": "dev", "status": "active", "pl_lead": "lead.alpha", "sign_off_in_days": null},
+    {"name": "MDL-B200", "stage_type": "NDA", "status": "active", "pl_lead": "lead.beta", "sign_off_in_days": null},
+    {"name": "MDL-C300", "stage_type": "MR", "status": "active", "pl_lead": "lead.gamma", "sign_off_in_days": 5},
+    {"name": "MDL-D400", "stage_type": "MR", "status": "active", "pl_lead": "lead.gamma", "sign_off_in_days": 30},
+    {"name": "MDL-E500", "stage_type": "MR", "status": "active", "pl_lead": "lead.delta", "sign_off_in_days": null},
+    {"name": "MDL-F600", "stage_type": "dev", "status": "completed", "pl_lead": "lead.alpha", "sign_off_in_days": null},
+    {"name": "MDL-G700", "stage_type": "dev", "status": "active", "pl_lead": "", "sign_off_in_days": null}
+  ],
+  "issues": [
+    {"number": "DEMO-0001", "title": "Wi-Fi drops while roaming", "folder": "MDL-A100_NA_DEV", "priority": "A", "must_check": "Y", "status": "Open", "created_hours_ago": 3, "creator": "sam.qa"},
+    {"number": "DEMO-0002", "title": "Camera freezes during 4K HDR recording", "folder": "MDL-B200_EU_NDA", "priority": "B", "must_check": "N", "status": "Open", "created_hours_ago": 5, "creator": "pat.qa"},
+    {"number": "DEMO-0003", "title": "Battery drains overnight in standby", "folder": "MDL-C300_NA_MR", "priority": "A", "must_check": "N", "status": "Open", "created_hours_ago": 2, "creator": "sam.qa"},
+    {"number": "DEMO-0004", "title": "Minor UI misalignment in settings", "folder": "MDL-D400_NA_MR", "priority": "C", "must_check": "N", "status": "Open", "created_hours_ago": 2, "creator": "pat.qa"},
+    {"number": "DEMO-0005", "title": "GPS fix takes over 60 seconds", "folder": "MDL-E500_NA_MR", "priority": "B", "must_check": "N", "status": "Open", "created_hours_ago": 6, "creator": "pat.qa"},
+    {"number": "DEMO-0006", "title": "Old issue that is no longer new", "folder": "MDL-A100_NA_DEV", "priority": "B", "must_check": "N", "status": "Open", "created_hours_ago": 72, "creator": "pat.qa"},
+    {"number": "DEMO-0007", "title": "Call audio cuts out on speakerphone", "folder": "MDL-A100_NA_DEV", "priority": "A", "must_check": "N", "status": "Resolve", "created_hours_ago": 120, "resolved_days_ago": 1, "creator": "sam.qa"},
+    {"number": "DEMO-0008", "title": "Bluetooth pairing fails with car kit", "folder": "MDL-B200_EU_NDA", "priority": "C", "must_check": "N", "status": "Resolve", "created_hours_ago": 480, "resolved_days_ago": 9, "creator": "pat.qa"},
+    {"number": "DEMO-0009", "title": "Notification sound plays twice", "folder": "MDL-A100_NA_DEV", "priority": "B", "must_check": "N", "status": "Resolve", "created_hours_ago": 96, "resolved_days_ago": 2, "creator": "pat.qa"},
+    {"number": "DEMO-0010", "title": "Sandbox experiment issue", "folder": "Sandbox Folder", "priority": "A", "must_check": "Y", "status": "Resolve", "created_hours_ago": 48, "resolved_days_ago": 1, "creator": "pat.qa"},
+    {"number": "DEMO-0011", "title": "Issue on a completed model", "folder": "MDL-F600_NA_DEV", "priority": "A", "must_check": "Y", "status": "Open", "created_hours_ago": 1, "creator": "pat.qa"},
+    {"number": "DEMO-0012", "title": "[MDL-A100] Hotspot clients lose connection", "folder": "Common Folder", "priority": "B", "must_check": "N", "status": "Open", "created_hours_ago": 1, "creator": "pat.qa"},
+    {"number": "DEMO-0013", "title": "Issue on a model without a PL Lead", "folder": "MDL-G700_NA_DEV", "priority": "A", "must_check": "N", "status": "Open", "created_hours_ago": 1, "creator": "pat.qa"}
+  ],
+  "next_cycle_changes": {"DEMO-0007": {"status": "Open"}}
+}
